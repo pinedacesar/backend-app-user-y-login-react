@@ -1,6 +1,7 @@
 package com.cpineda.backend.userapp.backenduserapp.services;
 
 import com.cpineda.backend.userapp.backenduserapp.model.entites.User;
+import com.cpineda.backend.userapp.backenduserapp.model.request.UserRequest;
 import com.cpineda.backend.userapp.backenduserapp.reposities.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,7 +35,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     @Transactional
-    public Optional<User> update(User user, Long id) {
+    public Optional<User> update(UserRequest user, Long id) {
         Optional<User> o = this.findById(id);
         User userOptional = null;
         if (o.isPresent()){

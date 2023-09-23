@@ -1,6 +1,7 @@
 package com.cpineda.backend.userapp.backenduserapp.controllers;
 
 import com.cpineda.backend.userapp.backenduserapp.model.entites.User;
+import com.cpineda.backend.userapp.backenduserapp.model.request.UserRequest;
 import com.cpineda.backend.userapp.backenduserapp.services.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +45,7 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@Valid @RequestBody User user, BindingResult result, @PathVariable Long id){
+    public ResponseEntity<?> update(@Valid @RequestBody UserRequest user, BindingResult result, @PathVariable Long id){
         if(result.hasErrors()){
             return validation(result);
         }
