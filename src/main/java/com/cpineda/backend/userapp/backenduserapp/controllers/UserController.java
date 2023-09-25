@@ -30,7 +30,9 @@ public class UserController {
     @GetMapping("/{id}")
     public ResponseEntity<?> show(@PathVariable Long id) {
         Optional<User> userOptional = service.findById(id);
+        System.out.printf(userOptional.toString());
         if (userOptional.isPresent()) {
+            System.out.printf(userOptional.toString());
             return ResponseEntity.ok(userOptional.orElseThrow());
         }
         return ResponseEntity.notFound().build();
