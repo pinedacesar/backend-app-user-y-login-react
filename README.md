@@ -34,4 +34,5 @@ Currently, two official plugins are available:
 - Spring Web
 - Spring Boot DevTools
 - Spring Data JPA
+- Spring Security y JWT
 

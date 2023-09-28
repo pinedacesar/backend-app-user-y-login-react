@@ -1,5 +1,6 @@
 package com.cpineda.backend.userapp.backenduserapp.services;
 
+import com.cpineda.backend.userapp.backenduserapp.model.dto.UserDto;
 import com.cpineda.backend.userapp.backenduserapp.model.entites.User;
 import com.cpineda.backend.userapp.backenduserapp.model.request.UserRequest;
 
@@ -7,13 +8,13 @@ import java.util.List;
 import java.util.Optional;
 
 public interface UserService {
-    List<User> findAll();
+    List<UserDto> findAll();
 
-    Optional<User> findById(Long id);
+    Optional<UserDto> findById(Long id);
 
-    User save(User user);
+    UserDto save(User user);
 
-    Optional<User> update(UserRequest user, Long id);
+    Optional<UserDto> update(UserRequest user, Long id);
 
     void remove(Long id);
 }
